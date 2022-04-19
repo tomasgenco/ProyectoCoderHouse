@@ -1,0 +1,16 @@
+$color-h1: gray;
+$colorbg: yellow;
+$color-texto: red;
+
+
+body{
+    background-color: $colorbg;
+}
+h1{
+    color: $color-h1;
+}
+
+p{
+    color: $color-texto;
+}
+
