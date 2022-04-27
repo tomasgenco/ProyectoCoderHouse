@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@mixin sizes ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin bgcolor ($color) {
+    background-color: $color;
+}
+
+$estilos:(
+    color: red,
+    tFuente: 70px,
+    centro: center,
+    1rem: 35px,
+    centrado: 50%,
+);
+
+h1{
+    color: map-get($map: $estilos, $key: color );
+    font-size: map-get($map: $estilos, $key: tFuente);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: map-get($map: $estilos, $key: centro );
+    @include sizes(100%, 100%)
+}
+
+.main{
+    display: flex;  
+    flex-direction: column;
+    justify-content: map-get($map: $estilos, $key:centro);
+}
+
+
+.form{
+    padding: 5px;
+    background-color: gainsboro;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // @include sizes(50%, 100%)
+}
+
+#apellido{
+    width: 50%;
+}
+
+#fname{
+    @extend #apellido
+}
+
+.btn--cancelar{
+    border: 4px solid bisque;
+    border-radius: 4px;
+    margin: 5px;
+    width: 25%;
+    @include bgcolor(red)
+
+}
+
+.btn--confirmar{
+    @extend .btn--cancelar;
+    @include bgcolor(green)
+
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
